@@ -4,6 +4,12 @@ let inputStrecke = prompt(`Wie weit bist du gefahren (in km)?`);
 let inputBenzin = prompt(`Wieviel Benzin hast du verbraucht (in Liter)?`);
 let inuptTank = prompt(`Was ist deine Tankgröße?`);
 
+// Variablen dürfen auch genauso heißen wie Übergabeparameter:
+
+// let strecke = prompt(`Wie weit bist du gefahren (in km)?`);
+// let benzin = prompt(`Wieviel Benzin hast du verbraucht (in Liter)?`);
+// let tank = prompt(`Was ist deine Tankgröße?`);
+
 let verbrauch = (strecke, benzin) => benzin / strecke * 100;
 
 let reichweite = (tank, strecke, benzin) => tank * strecke / benzin;
