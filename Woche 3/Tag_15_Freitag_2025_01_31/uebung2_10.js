@@ -1,6 +1,9 @@
 'use strict';
 
-let isFerdinandsBoardgame = (boardgame) => boardgame.includes(' ') && boardgame.startsWith('F');
+let isFerdinandsBoardgame = (boardgame) => {
+  // let boardgameName = boardgame.split(' ');
+  return boardgame.split(' ').every((name) => name.startsWith('F')) && boardgame.includes(' ');
+}
 
 let boardgames = [
   'Caverna',
