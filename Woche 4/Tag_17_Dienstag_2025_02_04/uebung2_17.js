@@ -7,6 +7,6 @@ const times = (n, fnk) => {
 };
 
 // fkn = () => '*'
-const rectangle = (width, height, character) => times(height, () => times(width, () => '*').join('')).join('\n');
+const rectangle = (width, height, character) => times(height, () => times(width, () => character).join('')).join('\n');
 
-console.log(rectangle(10, 10,'*'));
+console.log(rectangle(30, 10,'*'));

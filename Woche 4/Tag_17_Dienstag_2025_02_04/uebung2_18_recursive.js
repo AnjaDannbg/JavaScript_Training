@@ -1,5 +1,7 @@
 'use strict';
 
+const MIN_PRICE_LENGTH = 7;
+
 const times = (n, fnk) => {
   const results = Array(n).fill(0);
   results.forEach((x, index, results) => (results[index] = fnk(index)));
@@ -17,8 +19,7 @@ const askForPrice = () => {
 const fillWithZeros = (price) => {
   let newPrice = '' + price;
   if(newPrice.length < 7) {
-    console.log('Führe times aus:')
-    newPrice = times(7-newPrice.length, ()=> '0').join('') + newPrice;
+    newPrice = times(MIN_PRICE_LENGTH - newPrice.length, ()=> '0').join('') + newPrice;
   }
   return newPrice;
 }
