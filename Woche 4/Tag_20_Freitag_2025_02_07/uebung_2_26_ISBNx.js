@@ -34,26 +34,29 @@ const removeHyphens = (text) => {
 const checkIfISBN = (text) => {
   let possibleISBN = removeHyphens(text).split('');
   // add and multiply
-  let checksum = checksumDigit(possibleISBN);
+  let checksum = 10 - checksumDigit(possibleISBN);
   // if(possibleISBN[possibleISBN.length] === checksum) {
   //   return checksum;
   // }
-  return checksum;
+  return checksum === 10 ? 0 : checksum;
 }
 
 const checksumDigit = (possibleISBN) =>
   possibleISBN.reduce((a, b, i) => {
+    let ISBNnumber = Number(a) + Number(b)*multiplyerByPosition(i)
+    console.log('ISBNnumber:', ISBNnumber);
     console.log('a:', a);
     console.log('b:', b);
     console.log('i:', i);
     console.log('--------');
-    return Number(a) + Number(b)*multiplyerByPosition(i)
+    ISBNnumber.toString().charAt(ISBNnumber.length - 1);
+    return Number(ISBNnumber);
   });
    
 
 const multiplyerByPosition = (position) => position % 2 === 0 ? 1 : 3;
 
-const userInputISBN = '9783985952762';
+const userInputISBN = '978-3-86680-192';
 
 console.log(checkIfISBN(userInputISBN));
 

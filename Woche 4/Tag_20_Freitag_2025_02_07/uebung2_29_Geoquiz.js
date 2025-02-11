@@ -24,14 +24,6 @@ const range = (startOrEnd, end, step) =>
       ? rangeFromStartToEnd(startOrEnd, end, step)
       : rangeFromStartToEnd(0, startOrEnd);
 
-const generateRandomNumber = (minNumber, maxNumber) => Math.floor(Math.random() * (maxNumber - minNumber)) + minNumber;
-
-let allLottoNumbers = range(1, 50, 1); // 1 bis 49
-const returnAllLottoNumbers = () => allLottoNumbers;
-const resetLottoNumbers = () => {
-  allLottoNumbers = range(1, 50, 1);
-}
-
 // -------------- my code :
 
 const countriesWithCapital = [
@@ -45,15 +37,25 @@ const countriesWithCapital = [
 
 const returnCountriesWithCapital = () => countriesWithCapital;
 
-const capitalOf = (country) => {
-  const countriesWithCapital = returnCountriesWithCapital();
-  let capital;
-  for(let i=0; i<countriesWithCapital.length; i++) {
-    if(countriesWithCapital[i][0] === country) {
-      capital = countriesWithCapital[i][1];
-    }
-  }
-  return capital;
-};
+// Lösung mit For-Schleife:
 
-console.log(capitalOf('Germany'));
+// const capitalOf = (country) => {
+//   const countriesWithCapital = returnCountriesWithCapital();
+//   let capital;
+//   for(let i=0; i<countriesWithCapital.length; i++) {
+//     if(countriesWithCapital[i][0] === country) {
+//       capital = countriesWithCapital[i][1];
+//     }
+//   }
+//   return capital;
+// };
+
+
+const capitalOf = (country) => {
+    let countriesWithCapital = returnCountriesWithCapital();
+    let entryIndex = 0;
+    entryIndex = countriesWithCapital.findIndex((entry) => entry[0] === country);
+    return countriesWithCapital[entryIndex][1];
+}
+
+console.log(capitalOf('Russia'));
