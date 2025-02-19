@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Please click me</title>
+</head>
+<body>
+  <button>Click Me</button>
+  
+</body>
+<script>
+  // document.querySelector('button').addEventListener('click', () => alert('Hey I like it when you click me!'));
+  // document.querySelector('button').addEventListener('click', (e) => e.target.innerHTML = 'Hey I like it when you click me!');
+  document.querySelector('button').addEventListener('click', (e) => {
+    if(e.altKey === true) {
+      e.target.innerHTML = 'Cool, you found an easteregg!';
+    } else {
+      e.target.innerHTML = 'uuuuh yeah!';
+    }
+  })
+</script>
+</html>

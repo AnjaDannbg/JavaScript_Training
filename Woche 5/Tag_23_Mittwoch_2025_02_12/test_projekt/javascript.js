@@ -2,6 +2,7 @@
 const $ = (qs) => document.querySelector(qs);
 const $$ = (qs) => Array.from(document.querySelectorAll(qs));
 
+
 document.querySelector('p').innerHTML = "Abend!";
 let myNodeList = document.querySelectorAll('p');
 
