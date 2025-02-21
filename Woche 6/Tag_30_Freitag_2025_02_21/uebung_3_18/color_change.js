@@ -23,9 +23,24 @@ const init = () => {
 
 const changeBackgroundColorByButton = (event) => {
   const COLOR = event.target.innerHTML;
-  if (COLOR === 'Red') $('body').style.backgroundColor = 'red';
-  if (COLOR === 'Green') $('body').style.backgroundColor = 'green';
-  if (COLOR === 'Blue') $('body').style.backgroundColor = 'blue';
+  if (COLOR === 'Red') {
+    $('body').style.backgroundColor = 'rgb(255, 0, 0)';
+    $('#red-slider').value = 255;
+    $('#green-slider').value = 0;
+    $('#blue-slider').value = 0;
+  }
+  if (COLOR === 'Green') {
+    $('body').style.backgroundColor = 'rgb(0, 255, 0)';
+    $('#red-slider').value = 0;
+    $('#green-slider').value = 255;
+    $('#blue-slider').value = 0;
+  }
+  if (COLOR === 'Blue') {
+    $('body').style.backgroundColor = 'rgb(0, 0, 255)';
+    $('#red-slider').value = 0;
+    $('#green-slider').value = 0;
+    $('#blue-slider').value = 255;
+  }
 }
 
 const changeBackgroundColorBySlider = (event) => {
