@@ -18,24 +18,24 @@ const init = () => {
   
   $on($$('button'), 'click', changeBackgroundColorByButton);
 
-  $on($$('input[type=range]'), 'click', changeBackgroundColorBySlider);
+  $on($$('input[type=range]'), 'input', changeBackgroundColorBySlider);
 }
 
 const changeBackgroundColorByButton = (event) => {
-  const COLOR = event.target.innerHTML;
-  if (COLOR === 'Red') {
+  const color = event.target.innerHTML;
+  if (color === 'Red') {
     $('body').style.backgroundColor = 'rgb(255, 0, 0)';
     $('#red-slider').value = 255;
     $('#green-slider').value = 0;
     $('#blue-slider').value = 0;
   }
-  if (COLOR === 'Green') {
+  if (color === 'Green') {
     $('body').style.backgroundColor = 'rgb(0, 255, 0)';
     $('#red-slider').value = 0;
     $('#green-slider').value = 255;
     $('#blue-slider').value = 0;
   }
-  if (COLOR === 'Blue') {
+  if (color === 'Blue') {
     $('body').style.backgroundColor = 'rgb(0, 0, 255)';
     $('#red-slider').value = 0;
     $('#green-slider').value = 0;
@@ -43,11 +43,11 @@ const changeBackgroundColorByButton = (event) => {
   }
 }
 
-const changeBackgroundColorBySlider = (event) => {
-  const RED = $('#red-slider').value;
-  const GREEN = $('#green-slider').value;
-  const BLUE = $('#blue-slider').value;
-  $('body').style.backgroundColor = `rgb(${RED}, ${GREEN}, ${BLUE})`
+const changeBackgroundColorBySlider = () => {
+  const red = $('#red-slider').value;
+  const green = $('#green-slider').value;
+  const blue = $('#blue-slider').value;
+  $('body').style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
 }
 
 init();
